@@ -11,7 +11,7 @@
 SalesOrder_select<- function(erp_token,FSalesOrderID) {
 
   sql=paste0("
-  select * from rds_erp_vw_rpt_PNSerialNoTrace where FSalesOrderID='",FSalesOrderID,"'
+EXEC rds_erp_PROC_rpt_PNSerialNoTrace_SalesOrder  '",FSalesOrderID,"'
              ")
 
   res=tsda::sql_select2(token = erp_token,sql = sql)
